@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Developer's Portfolio</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/use.typekit.net_esj2lad.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+</head>
+<body>
+<div class="col-12 container" id="wrapper">
+    <!-- Sidebar-->
+    <div class="col-12 bg-white d-flex justify-content-between">
+        <div class="d-flex align-items-center">
+            <a href="#"><img class="logo" src="/img/logo1.png" alt="logo"></a>
+        </div>
+        <div class="col-8 list-group list-group-flush d-flex justify-content-between flex-row">
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/">홈</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/member/join">회원가입</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" sec:authorize="isAnonymous()" th:href="@{/member/login}">로그인</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" sec:authorize="isAuthenticated()" th:href="@{/member/login?logout}">로그아웃</a>
+            <a class="list-group-item list-group-item-action list-group-item-light p-3" href="/board/list">게시판</a>
+        </div>
+    </div>
+    <!-- Page content wrapper-->
+    <div id="page-content-wrapper">
+        <!-- Page content-->
+        <div class="container-fluid">
+
+        </div>
+    </div>
+</div>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
